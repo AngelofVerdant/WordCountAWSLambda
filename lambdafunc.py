@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     # Publish a message to SNS
     sns = boto3.client('sns')
     message = f'The file {file_name} contains {word_count} words.'
-    sns.publish(TopicArn='arn:aws:sns:us-west-2:145972262256:returnWordCount', Message=message)
+    sns.publish(TopicArn='yourSNSarn:returnWordCount', Message=message)
 
     # Return the word count as the output of the Lambda function
     return {
